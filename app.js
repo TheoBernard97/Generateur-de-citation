@@ -16,7 +16,7 @@ function quoteGenerator() {
   let middleQuote = quotes.middle_quotes[getRandomInt(10)];
   let endingQuote = quotes.ending_quotes[getRandomInt(10)];
 
-  fullQuote = startingQuote + " " + middleQuote + " " + endingQuote;
+  fullQuote = `${startingQuote} ${middleQuote} ${endingQuote}.`;
   return fullQuote;
 }
 
