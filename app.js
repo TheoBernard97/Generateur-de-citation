@@ -12,19 +12,11 @@ btn.addEventListener("click", () => {
 function quoteGenerator() {
   let fullQuote = "";
 
-  let x = quotes[getRandomInt(10)];
-  let y = quotes[getRandomInt(10)];
-  let z = quotes[getRandomInt(10)];
+  let startingQuote = quotes.stating_quotes[getRandomInt(10)];
+  let middleQuote = quotes.middle_quotes[getRandomInt(10)];
+  let endingQuote = quotes.ending_quotes[getRandomInt(10)];
 
-  while (y === x) {
-    y = quotes[getRandomInt(10)];
-  }
-
-  while (z === x || z === y) {
-    z = quotes[getRandomInt(10)];
-  }
-
-  fullQuote = quotes[x] + " " + quotes[y] + " " + quotes[z];
+  fullQuote = startingQuote + " " + middleQuote + " " + endingQuote;
   return fullQuote;
 }
 
