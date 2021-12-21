@@ -1,6 +1,6 @@
-## Cahier des charges 
+## 📝 Cahier des charges
 
-#### Périmètre initial
+#### 🚩 Périmètre initial
 
 - Les citations sont générées aléatoirement une par une à chaque appel du programme JavaScript
 
@@ -8,7 +8,7 @@
 
 - A défaut d'être intelligible, la phrase doit être cohérente (pas de point d'exclamation au milieu d'une phrase)
 
-#### Rajouter des options de configuration 
+#### 🚩 Rajouter des options de configuration
 
 - Choisir le nombre de citations générées (de 1 à 5)
 
