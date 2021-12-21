@@ -20,7 +20,6 @@ function setupEventListeners() {
       displayQuotes(quoteQuantity);
     }
     if (event.target === incrementQuotes && maxQuoteQuantity > quoteQuantity) {
-      console.log("+");
       quoteQuantity++;
       updateSettings();
     }
@@ -57,7 +56,6 @@ function displayQuotes(value) {
 }
 
 function updateSettings() {
-  console.log("updateSettings");
   numberOfQuotes.innerHTML = quoteQuantity;
 }
 
