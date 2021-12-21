@@ -7,7 +7,7 @@ const minQuoteQuantity = 1;
 const maxQuoteQuantity = 5;
 
 const btn = document.getElementById("btn");
-const displayedQuote = document.getElementById("result");
+const resultContainer = document.getElementById("result-container");
 const numberOfQuotes = document.getElementById("quote-quantity");
 const incrementQuotes = document.getElementById("more");
 const decrementQuotes = document.getElementById("less");
@@ -17,8 +17,7 @@ setupEventListeners();
 function setupEventListeners() {
   document.addEventListener("click", (event) => {
     if (event.target === btn) {
-      const fullQuote = quoteGenerator();
-      displayQuotes(fullQuote);
+      displayQuotes(quoteQuantity);
     }
     if (event.target === incrementQuotes && maxQuoteQuantity > quoteQuantity) {
       console.log("+");
@@ -47,7 +46,14 @@ function quoteGenerator() {
 }
 
 function displayQuotes(value) {
-  displayedQuote.innerHTML = value;
+  resultContainer.innerHTML = "";
+  for(let i = 0; i < value; i++){
+    const quote = quoteGenerator();
+    const tag = document.createElement("p");
+    const text = document.createTextNode(quote);
+    tag.appendChild(text);
+    resultContainer.appendChild(tag);
+  }
 }
 
 function updateSettings() {
