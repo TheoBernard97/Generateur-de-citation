@@ -11,6 +11,9 @@ const resultContainer = document.getElementById("result-container");
 const numberOfQuotes = document.getElementById("quote-quantity");
 const incrementQuotes = document.getElementById("more");
 const decrementQuotes = document.getElementById("less");
+const philosophicalRadio = document.getElementById('philosophical');
+const bullshitlRadio = document.getElementById('bullshit');
+let quoteType = document.querySelector('input[name="quote"]:checked').value + "_quotes";
 
 setupEventListeners();
 
@@ -27,6 +30,9 @@ function setupEventListeners() {
       quoteQuantity--;
       updateSettings();
     }
+    if (event.taget === philosophicalRadio || bullshitlRadio){
+      updateSettings();
+    }
   });
 }
 
@@ -34,11 +40,11 @@ function quoteGenerator() {
   let fullQuote = "";
 
   let startingQuote =
-    quotes.stating_quotes[getRandomInt(quotes.stating_quotes.length)];
+    quotes[quoteType].starting_quotes[getRandomInt(quotes[quoteType].starting_quotes.length)];
   let middleQuote =
-    quotes.middle_quotes[getRandomInt(quotes.middle_quotes.length)];
+    quotes[quoteType].middle_quotes[getRandomInt(quotes[quoteType].middle_quotes.length)];
   let endingQuote =
-    quotes.ending_quotes[getRandomInt(quotes.ending_quotes.length)];
+    quotes[quoteType].ending_quotes[getRandomInt(quotes[quoteType].ending_quotes.length)];
 
   fullQuote = `${startingQuote} ${middleQuote} ${endingQuote}.`;
   return fullQuote;
@@ -57,6 +63,7 @@ function displayQuotes(value) {
 
 function updateSettings() {
   numberOfQuotes.innerHTML = quoteQuantity;
+  quoteType = document.querySelector('input[name="quote"]:checked').value + "_quotes";
 }
 
 function getRandomInt(max) {
